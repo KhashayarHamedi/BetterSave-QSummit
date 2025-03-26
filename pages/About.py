@@ -16,7 +16,7 @@ def main():
     # Apply the Webflow theme
     apply_webflow_theme()
 
- 
+
 
     # Page header
     render_header("About BetterSave Energy", "main-header")
@@ -109,17 +109,7 @@ def main():
         </style>
     """, unsafe_allow_html=True)
 
-    # Company mission section
-    st.markdown("""
-    <div class="about-section">
-        <h2 class="section-title">Our Mission</h2>
-        <p class="about-text">
-            At BetterSave Energy, our mission is to empower organizations and individuals with data-driven insights
-            to optimize energy consumption, reduce costs, and promote sustainability. We believe that intelligent
-            energy management is key to a more sustainable future.
-        </p>
-    </div>
-    """, unsafe_allow_html=True)
+    
 
     # Title - Solid Neon Green
     st.markdown("<div class='futuristic-title'>WHAT is BetterSave?</div>", unsafe_allow_html=True)
@@ -214,7 +204,7 @@ def main():
         <div class="contact-info">
             <div class="contact-item">
                 <span class="contact-icon">📧</span>
-                <a href="mailto:info@bettersave-energy.com" class="contact-link">info@bettersave-energy.com</a>
+                <a href="mailto:officialkhashayar@gmail.com" class="contact-link">officialkhashayar@gmail.com</a>
             </div>
             <div class="contact-item">
                 <span class="contact-icon">📞</span>
@@ -222,7 +212,7 @@ def main():
             </div>
             <div class="contact-item">
                 <span class="contact-icon">📍</span>
-                <span class="contact-text">123 Energy Plaza, San Francisco, CA 94105</span>
+                <span class="contact-text">Berlin, Germany</span>
             </div>
         </div>
     </div>
