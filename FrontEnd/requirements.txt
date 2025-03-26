@@ -1,0 +1,13 @@
+# BetterSave Energy Dashboard Requirements
+# Core packages
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Visualization
+plotly>=5.15.0
+plotly-express>=0.4.1
+
+
+# Time series analysis (for forecasting functionality)
+statsmodels>=0.14.0
+

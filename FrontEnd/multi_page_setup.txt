@@ -1,0 +1,131 @@
+# Setting Up Multi-page Navigation in Streamlit
+
+To implement the requested navigation bar with multiple pages (Home, Dashboard, Prediction, About Us), follow these instructions to set up a proper multi-page Streamlit application:
+
+## 1. Create a Pages Directory Structure
+
+Streamlit's multi-page app functionality requires a specific directory structure:
+
+```
+bettersave_dashboard/
+├── main.py                 # This will be your Home/Landing page
+├── pages/                  # Directory for additional pages
+│   ├── 1_Dashboard.py      # Dashboard page
+│   ├── 2_Prediction.py     # Prediction page
+│   └── 3_About_Us.py       # About Us page
+├── imports_config.py
+├── data_loader.py
+├── styling.py
+├── analysis.py
+├── visualization.py
+└── components.py
+```
+
+## 2. Modify Your Current Code
+
+1. **Current main.py becomes Dashboard.py**:
+   - Move your current `main.py` code to `pages/1_Dashboard.py`
+   - Make sure to include all the necessary imports
+
+2. **Create a New main.py (Home/Landing Page)**:
+   - Create a simpler landing page that introduces the application
+   - Include the navigation component
+
+3. **Create Additional Pages**:
+   - Create `pages/2_Prediction.py` for the prediction functionality
+   - Create `pages/3_About_Us.py` for information about your team/company
+
+## 3. Update Navigation Links
+
+The navigation bar has been added with the following links:
+- Home (`/`): Main landing page
+- Dashboard (`/dashboard`): Energy dashboard
+- Prediction (`/prediction`): Prediction page
+- About Us (`/about`): About Us page
+
+## 4. Sharing Code Between Pages
+
+To share code between pages:
+- All utility modules (styling.py, data_loader.py, etc.) will be importable from all pages
+- Make sure imports in each page file correctly reference these shared modules
+
+## 5. Running the Multi-page App
+
+Run the application from the parent directory using:
+```
+streamlit run main.py
+```
+
+Streamlit will automatically detect the pages directory and create navigation for all the pages.
+
+## Example of Landing Page (main.py)
+
+Here's a simple example of what your new main.py (landing page) might look like:
+
+```python
+import streamlit as st
+from imports_config import configure_page
+from styling import apply_webflow_theme, render_navigation, render_footer
+
+def main():
+    # Configure the page
+    configure_page()
+    
+    # Apply the Webflow theme
+    apply_webflow_theme()
+    
+    # Render navigation bar
+    render_navigation()
+    
+    # Landing page content
+    st.markdown("<h1 class='main-header'>Welcome to BetterSave Energy</h1>", unsafe_allow_html=True)
+    
+    # Hero section
+    st.markdown("""
+        <div class="hero-section">
+            <h2>Sustainable Energy Analytics Platform</h2>
+            <p class="hero-text">
+                Optimize your energy consumption, track generation patterns, and make data-driven decisions
+                with our comprehensive energy analytics dashboard.
+            </p>
+            <div class="hero-actions">
+                <a href="/dashboard" class="hero-button">Explore Dashboard</a>
+            </div>
+        </div>
+    """, unsafe_allow_html=True)
+    
+    # Features section
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        st.markdown("""
+            <div class="feature-card">
+                <h3>Energy Tracking</h3>
+                <p>Monitor energy consumption and generation patterns with interactive visualizations.</p>
+            </div>
+        """, unsafe_allow_html=True)
+    
+    with col2:
+        st.markdown("""
+            <div class="feature-card">
+                <h3>Predictive Analytics</h3>
+                <p>Forecast energy trends and identify opportunities for optimization.</p>
+            </div>
+        """, unsafe_allow_html=True)
+    
+    with col3:
+        st.markdown("""
+            <div class="feature-card">
+                <h3>Source Analysis</h3>
+                <p>Analyze energy sources and track renewable energy contribution.</p>
+            </div>
+        """, unsafe_allow_html=True)
+    
+    # Footer
+    render_footer()
+
+if __name__ == "__main__":
+    main()
+```
+
+Make sure to add any additional CSS styling for these new elements to your styling.py file.
