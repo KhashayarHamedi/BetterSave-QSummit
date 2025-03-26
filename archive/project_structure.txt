@@ -1,0 +1,61 @@
+# BetterSave Energy Dashboard - Project Structure
+
+The code has been restructured into the following modular components for easier maintenance:
+
+## File Structure
+
+```
+bettersave_dashboard/
+├── main.py                 # Main application entry point
+├── imports_config.py       # Imports and global configuration
+├── data_loader.py          # Data loading and processing functions
+├── styling.py              # CSS styling and UI component functions
+├── analysis.py             # Data analysis and calculation functions
+├── visualization.py        # Plotly visualization functions
+└── components.py           # UI component rendering functions
+```
+
+## Module Overview
+
+### main.py
+The main entry point for the Streamlit application. It imports all other modules and orchestrates the app flow.
+
+### imports_config.py
+Contains all imports needed for the application and basic configuration settings.
+
+### data_loader.py
+Functions for loading and processing data from CSV files, including filtering and preprocessing.
+
+### styling.py
+Contains the Webflow-inspired CSS theme and UI component rendering functions for consistent styling.
+
+### analysis.py
+Data analysis functions for calculating metrics, trends, forecasts, and anomaly detection.
+
+### visualization.py
+Plotly chart creation functions for different visualization types with consistent styling.
+
+### components.py
+Functions for rendering different sections of the dashboard UI, organized by tab/section.
+
+## Usage
+
+To run the application:
+
+1. Place all files in the same directory
+2. Make sure the CSV data files are in the parent directory as expected by the app
+3. Run the application using:
+
+```
+streamlit run main.py
+```
+
+## Customization
+
+- To modify styling: Edit the CSS in `styling.py`
+- To change data analysis: Modify functions in `analysis.py`
+- To update visualizations: Edit chart creation in `visualization.py`
+- To change UI components: Update rendering in `components.py`
+- To modify app structure: Edit main flow in `main.py`
+
+This modular structure makes it much easier to maintain and extend the dashboard.
